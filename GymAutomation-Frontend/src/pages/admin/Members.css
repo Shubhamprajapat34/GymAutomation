@@ -916,6 +916,19 @@
 }
 
 
+.members-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.primary-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 /* =========================================
    MODAL ACTIONS
 ========================================= */
