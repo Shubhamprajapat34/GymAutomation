@@ -33,6 +33,10 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
+    public List<Member> getMembersForTrainer(Long trainerId) {
+        return memberRepository.findAllByTrainerId(trainerId);
+    }
+
     // ==========================
     // VIEW MEMBER BY ID
     // ==========================

@@ -19,6 +19,13 @@ import Memberships from "../pages/admin/Memberships";
 import Gym from "../pages/admin/Gym";
 
 
+import TrainerLayout from "../layouts/TrainerLayout";
+import TrainerDashboard from "../pages/trainer/Dashboard";
+import AssignedMembers from "../pages/trainer/AssignedMembers";
+import CreateWorkoutPlan from "../pages/trainer/CreateWorkoutPlan";
+import CreateDietPlan from "../pages/trainer/CreateDietPlan";
+
+
 const AppRoutes = () => {
 
     return (
@@ -28,15 +35,7 @@ const AppRoutes = () => {
 
             {/* DEFAULT */}
 
-            <Route
-
-                path="/"
-
-                element={
-                    <Navigate to="/login" />
-                }
-
-            />
+            <Route path="/" element={ <Navigate to="/login" /> } />
 
 
             {/* AUTH */}
@@ -46,7 +45,7 @@ const AppRoutes = () => {
             <Route path="/register" element={<Register />} />
 
 
-            {/* ADMIN */}
+            {/*================== ADMIN  ROUTES==================*/}
 
             <Route path="/admin" element={
                           <ProtectedRoute allowedRole="ADMIN">
@@ -66,6 +65,27 @@ const AppRoutes = () => {
                 
            
             </Route>
+
+        {/* ================= TRAINER ROUTES ================= */}
+
+        <Route path="/trainer" element={
+                    <ProtectedRoute allowedRole="TRAINER">
+                            <TrainerLayout />
+                         </ProtectedRoute>
+                      }>
+
+
+           <Route index element={<Navigate to="dashboard" />}/>
+
+           <Route path="dashboard" element={<TrainerDashboard />}/>
+
+           <Route path="members" element={<AssignedMembers />}/>
+
+           <Route path="workout-plan" element={<CreateWorkoutPlan />}/>
+
+           <Route path="diet-plan" element={<CreateDietPlan />} />
+
+        </Route>
 
 
         </Routes>

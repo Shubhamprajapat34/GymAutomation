@@ -79,9 +79,25 @@ const Trainers = () => {
 
             // If backend directly returns an array
 
+            const trainerData = Array.isArray(response.data)
+                ? response.data
+                : Array.isArray(response.data?.content)
+                    ? response.data.content
+                    : Array.isArray(response.data?.data)
+                        ? response.data.data
+                        : [];
+
+            const normalizedTrainers = trainerData.map((trainer) => ({
+                ...trainer,
+                userId: trainer.userId || trainer.user?.id,
+                name: trainer.name || trainer.user?.name,
+                email: trainer.email || trainer.user?.email,
+                phone: trainer.phone || trainer.user?.phone
+            }));
+
             if (Array.isArray(response.data)) {
 
-                setTrainers(response.data);
+                setTrainers(normalizedTrainers);
 
             }
 
@@ -89,7 +105,7 @@ const Trainers = () => {
 
             else if (Array.isArray(response.data?.content)) {
 
-                setTrainers(response.data.content);
+                setTrainers(normalizedTrainers);
 
             }
 
@@ -97,7 +113,7 @@ const Trainers = () => {
 
             else if (Array.isArray(response.data?.data)) {
 
-                setTrainers(response.data.data);
+                setTrainers(normalizedTrainers);
 
             }
 
@@ -248,7 +264,7 @@ const Trainers = () => {
 
 
         await api.post(
-            "/api/auth/register",
+            "/api/admin/trainers",
             trainerData
         );
 

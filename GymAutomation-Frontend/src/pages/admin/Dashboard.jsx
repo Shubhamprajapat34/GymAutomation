@@ -13,9 +13,7 @@ import {
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
-
 import api from "../../services/api";
-
 import { AuthContext } from "../../context/AuthContext";
 
 
@@ -844,63 +842,3 @@ const Dashboard = () => {
 export default Dashboard;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import api from "../../services/api";
-import { AuthContext } from "../../context/AuthContext";
-
-const Dashboard = () => {
-    const { user } = useContext(AuthContext);
-    const [summary, setSummary] = useState({ members: 0, activeMembers: 0, trainers: 0, memberships: 0 });
-
-    useEffect(() => {
-        const loadSummary = async () => {
-            const [members, trainers, memberships] = await Promise.all([
-                api.get("/api/admin/members"),
-                api.get("/api/admin/trainers"),
-            
-                api.get("/api/memberships"),
-            ]);
-            setSummary({
-                members: members.data.length,
-                activeMembers: members.data.filter((member) => member.membershipStatus === "ACTIVE").length,
-                trainers: trainers.data.length,
-                memberships: memberships.data.length,
-            });
-        };
-        loadSummary();
-    }, []);
-
-    const stats = [
-        ["Total members", summary.members, "coral"],
-        ["Active members", summary.activeMembers, "blue"],
-        ["Trainers", summary.trainers, "green"],
-        ["Membership plans", summary.memberships, "yellow"],
-    ];
-
-    return <section className="overview-content"><div className="dashboard-header"><div><p className="eyebrow">Admin overview</p><h1>Good morning, <em>{user?.name || "Administrator"}</em></h1><p className="header-caption">Here is what is happening across your gym.</p></div></div><div className="stats-grid">{stats.map(([label, value, tone]) => <div className={`stat-card ${tone}`} key={label}><span>{label}</span><strong>{value}</strong><small>Current total</small></div>)}</div><div className="panel quick-actions"><div className="panel-heading"><div><p className="eyebrow">Workspace</p><h2>Quick actions</h2></div></div><div className="quick-action-links"><Link to="/admin/members">View members</Link><Link to="/admin/trainers">View trainers</Link><Link to="/admin/memberships">Manage memberships</Link><Link to="/admin/payments">View payments</Link></div></div></section>;
-};
-
-export default Dashboard;*/
