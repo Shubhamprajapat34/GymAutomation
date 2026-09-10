@@ -24,6 +24,10 @@ const Members = () => {
 
     const [members, setMembers] = useState([]);
 
+    const [trainers, setTrainers] = useState([]);
+
+    const [memberships, setMemberships] = useState([]);
+
     const [search, setSearch] = useState("");
 
     const [loading, setLoading] = useState(true);
@@ -57,7 +61,11 @@ const Members = () => {
 
         emergencyContact: "",
 
-        role: "MEMBER"
+        role: "MEMBER",
+
+        trainerId: "",
+
+        membershipId: ""
 
     };
 
@@ -127,6 +135,20 @@ const Members = () => {
 
     };
 
+    const loadAssignmentOptions = async () => {
+        try {
+            const [trainerResponse, membershipResponse] = await Promise.all([
+                api.get("/api/admin/trainers"),
+                api.get("/api/memberships")
+            ]);
+
+            setTrainers(Array.isArray(trainerResponse.data) ? trainerResponse.data : []);
+            setMemberships(Array.isArray(membershipResponse.data) ? membershipResponse.data : []);
+        } catch (error) {
+            setError(error.response?.data?.message || "Unable to load assignment options.");
+        }
+    };
+
 
     // ==========================================
     // LOAD MEMBERS WHEN PAGE OPENS
@@ -135,8 +157,12 @@ const Members = () => {
     useEffect(() => {
 
         const requestId = window.setTimeout(loadMembers, 0);
+        const optionsRequestId = window.setTimeout(loadAssignmentOptions, 0);
 
-        return () => window.clearTimeout(requestId);
+        return () => {
+            window.clearTimeout(requestId);
+            window.clearTimeout(optionsRequestId);
+        };
 
     }, []);
 
@@ -199,7 +225,11 @@ const Members = () => {
             emergencyContact:
                 member.emergencyContact || "",
 
-            role: "MEMBER"
+            role: "MEMBER",
+
+            trainerId: member.trainer?.id || "",
+
+            membershipId: member.membership?.id || ""
 
         });
 
@@ -252,7 +282,7 @@ const Members = () => {
 
     const createMember = async () => {
 
-        await api.post(
+        return api.post(
 
             "/api/auth/register",
 
@@ -260,6 +290,24 @@ const Members = () => {
 
         );
 
+    };
+
+    const assignMemberRelationships = async (memberId) => {
+        const requests = [];
+
+        if (form.membershipId) {
+            requests.push(api.put(
+                `/api/admin/members/${memberId}/membership/${form.membershipId}`
+            ));
+        }
+
+        if (form.trainerId) {
+            requests.push(api.put(
+                `/api/admin/members/${memberId}/trainer/${form.trainerId}`
+            ));
+        }
+
+        await Promise.all(requests);
     };
 
 
@@ -307,7 +355,14 @@ const Members = () => {
 
             if (modalType === "CREATE") {
 
-                await createMember();
+                const response = await createMember();
+                const createdMemberId = response.data?.userId;
+                const createdMember = (await api.get("/api/admin/members")).data
+                    .find((member) => member.user?.id === createdMemberId);
+
+                if (createdMember) {
+                    await assignMemberRelationships(createdMember.id);
+                }
 
             }
 
@@ -315,6 +370,7 @@ const Members = () => {
             if (modalType === "EDIT") {
 
                 await updateMember();
+                await assignMemberRelationships(selectedMember.id);
 
             }
 
@@ -1171,6 +1227,20 @@ const Members = () => {
 
                                                 </div>
 
+                                                <div>
+                                                    <label>Assigned Trainer</label>
+                                                    <p>
+                                                        {selectedMember?.trainer?.user?.name || "Not assigned"}
+                                                    </p>
+                                                </div>
+
+                                                <div>
+                                                    <label>Membership</label>
+                                                    <p>
+                                                        {selectedMember?.membership?.name || "Not assigned"}
+                                                    </p>
+                                                </div>
+
 
                                             </div>
 
@@ -1376,6 +1446,38 @@ const Members = () => {
 
                                                     />
 
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label>Assign Trainer</label>
+                                                    <select
+                                                        name="trainerId"
+                                                        value={form.trainerId}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option value="">Select trainer</option>
+                                                        {trainers.map((trainer) => (
+                                                            <option key={trainer.id} value={trainer.id}>
+                                                                {trainer.user?.name || trainer.user?.email || `Trainer ${trainer.id}`}
+                                                            </option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label>Assign Membership</label>
+                                                    <select
+                                                        name="membershipId"
+                                                        value={form.membershipId}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <option value="">Select membership</option>
+                                                        {memberships.map((membership) => (
+                                                            <option key={membership.id} value={membership.id}>
+                                                                {membership.name}
+                                                            </option>
+                                                        ))}
+                                                    </select>
                                                 </div>
 
 

@@ -38,7 +38,6 @@ public class AdminTrainerController {
     // =========================
     // VIEW ALL TRAINERS
     // =========================
-
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<Trainer>> getAllTrainers() {
@@ -52,7 +51,6 @@ public class AdminTrainerController {
     // =========================
     // VIEW TRAINER BY ID
     // =========================
-
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Trainer> getTrainerById(

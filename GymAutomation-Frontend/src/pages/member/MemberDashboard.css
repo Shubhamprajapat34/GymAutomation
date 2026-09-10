@@ -1,0 +1,1224 @@
+/* =========================================
+   MEMBER DASHBOARD
+========================================= */
+
+.member-dashboard-page {
+    width: 100%;
+}
+
+
+/* =========================================
+   WELCOME HERO
+========================================= */
+
+.member-welcome-card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 235px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 35px 45px;
+
+    margin-bottom: 25px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #151922 0%,
+            #202735 55%,
+            #3a2b18 100%
+        );
+
+    box-shadow:
+        0 15px 35px rgba(20, 25, 35, 0.12);
+}
+
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.welcome-label {
+    color: #f59e0b;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.welcome-content h1 {
+    margin: 10px 0 8px;
+
+    color: #ffffff;
+
+    font-size: 32px;
+    font-weight: 750;
+}
+
+
+.welcome-content p {
+    max-width: 550px;
+
+    margin: 0 0 22px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 14px;
+}
+
+
+.hero-action-button {
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 9px;
+
+    background: #f59e0b;
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.hero-action-button span {
+    margin-left: 10px;
+}
+
+
+.hero-action-button:hover {
+    background: #f97316;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO DECORATION
+========================================= */
+
+.welcome-decoration {
+    position: relative;
+
+    width: 250px;
+    height: 180px;
+}
+
+
+.fitness-circle {
+    position: absolute;
+
+    width: 135px;
+    height: 135px;
+
+    right: 35px;
+    top: 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #f97316
+        );
+
+    font-size: 55px;
+
+    box-shadow:
+        0 15px 40px rgba(245, 158, 11, 0.25);
+}
+
+
+.floating-dot {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: rgba(245, 158, 11, 0.25);
+}
+
+
+.dot-one {
+    width: 20px;
+    height: 20px;
+
+    top: 10px;
+    right: 5px;
+}
+
+
+.dot-two {
+    width: 12px;
+    height: 12px;
+
+    bottom: 20px;
+    left: 20px;
+}
+
+
+.dot-three {
+    width: 30px;
+    height: 30px;
+
+    right: 0;
+    bottom: 10px;
+}
+
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.member-dashboard-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+
+.dashboard-stat-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 21px;
+
+    min-height: 155px;
+
+    border-radius: 17px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8ebef;
+
+    transition: all 0.25s ease;
+}
+
+
+.dashboard-stat-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 28px rgba(20, 25, 35, 0.08);
+}
+
+
+.dashboard-stat-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    right: -35px;
+    bottom: -35px;
+
+    border-radius: 50%;
+
+    opacity: 0.08;
+}
+
+
+.membership-stat::after {
+    background: #f59e0b;
+}
+
+
+.trainer-stat::after {
+    background: #6366f1;
+}
+
+
+.subscription-stat::after {
+    background: #ef4444;
+}
+
+
+.status-stat::after {
+    background: #10b981;
+}
+
+
+.dashboard-stat-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+.dashboard-stat-icon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff7e6;
+
+    font-size: 20px;
+}
+
+
+.trainer-stat .dashboard-stat-icon {
+    background: #eef2ff;
+}
+
+
+.subscription-stat .dashboard-stat-icon {
+    background: #fef2f2;
+}
+
+
+.status-stat .dashboard-stat-icon {
+    background: #ecfdf5;
+}
+
+
+.stat-arrow {
+    color: #c3c8d1;
+
+    font-size: 18px;
+}
+
+
+.dashboard-stat-label {
+    display: block;
+
+    color: #8a93a4;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.dashboard-stat-card h2 {
+    margin: 7px 0 5px;
+
+    color: #171b26;
+
+    font-size: 19px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.dashboard-stat-card p {
+    margin: 0;
+
+    color: #8a93a4;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   MAIN GRID
+========================================= */
+
+.member-dashboard-main-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+
+    margin-bottom: 22px;
+}
+
+
+.dashboard-large-card {
+    padding: 26px;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8ebef;
+
+    box-shadow:
+        0 4px 15px rgba(20, 25, 35, 0.025);
+}
+
+
+.dashboard-card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+}
+
+
+.dashboard-card-header span {
+    color: #8a93a4;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.dashboard-card-header h2 {
+    margin: 7px 0 0;
+
+    color: #202532;
+
+    font-size: 21px;
+}
+
+
+.plan-star,
+.trainer-avatar {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 23px;
+
+    background: #fff7e6;
+}
+
+
+.trainer-avatar {
+    background: #eef2ff;
+}
+
+
+/* =========================================
+   MEMBERSHIP
+========================================= */
+
+.membership-highlight {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf0,
+            #fff7e6
+        );
+
+    border: 1px solid #fde7bd;
+}
+
+
+.membership-highlight small {
+    display: block;
+
+    color: #a16207;
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+
+.membership-highlight strong {
+    color: #b45309;
+
+    font-size: 25px;
+}
+
+
+.active-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+.active-status span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+}
+
+
+/* =========================================
+   PLAN INFO
+========================================= */
+
+.plan-info-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin: 15px 0 20px;
+}
+
+
+.plan-info-row div {
+    padding: 14px;
+
+    border-radius: 11px;
+
+    background: #f8f9fb;
+}
+
+
+.plan-info-row small {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8a93a4;
+
+    font-size: 11px;
+}
+
+
+.plan-info-row strong {
+    color: #252a36;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   TRAINER
+========================================= */
+
+.trainer-details {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 13px;
+
+    margin-bottom: 20px;
+}
+
+
+.trainer-detail {
+    padding: 16px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5f3ff,
+            #eef2ff
+        );
+
+    border: 1px solid #ddd6fe;
+}
+
+
+.trainer-detail span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #7c72a8;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+}
+
+
+.trainer-detail strong {
+    color: #4f46e5;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.dashboard-outline-button {
+    width: 100%;
+
+    padding: 11px 15px;
+
+    border-radius: 9px;
+
+    border: 1px solid #e4e7ec;
+
+    background: #ffffff;
+
+    color: #252a36;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.dashboard-outline-button:hover {
+    border-color: #f59e0b;
+
+    color: #d97706;
+
+    background: #fffaf0;
+}
+
+
+.dashboard-outline-button span {
+    float: right;
+}
+
+
+/* =========================================
+   BOTTOM GRID
+========================================= */
+
+.dashboard-bottom-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   PROFILE PROGRESS
+========================================= */
+
+.profile-progress-card {
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8ebef;
+}
+
+
+.progress-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.progress-header span,
+.motivation-card span {
+    color: #8a93a4;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.progress-header h2 {
+    margin: 6px 0 0;
+
+    color: #252a36;
+
+    font-size: 18px;
+}
+
+
+.progress-header > strong {
+    color: #f59e0b;
+
+    font-size: 22px;
+}
+
+
+.progress-track {
+    height: 9px;
+
+    margin: 22px 0 12px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #edf0f3;
+}
+
+
+.progress-fill {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f59e0b,
+            #f97316
+        );
+
+    transition: width 0.5s ease;
+}
+
+
+.profile-progress-card p {
+    margin: 0 0 15px;
+
+    color: #8a93a4;
+
+    font-size: 12px;
+}
+
+
+.profile-progress-card button {
+    border: none;
+
+    background: transparent;
+
+    color: #d97706;
+
+    padding: 0;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   MOTIVATION
+========================================= */
+
+.motivation-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #151922,
+            #252c3a
+        );
+
+    color: #ffffff;
+}
+
+
+.motivation-icon {
+    width: 62px;
+    height: 62px;
+
+    min-width: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #f97316
+        );
+
+    font-size: 28px;
+}
+
+
+.motivation-card h2 {
+    margin: 7px 0;
+
+    color: #ffffff;
+
+    font-size: 19px;
+}
+
+
+.motivation-card p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   QUICK ACTIONS
+========================================= */
+
+.quick-actions-section {
+    margin-bottom: 30px;
+}
+
+
+.quick-actions-heading {
+    margin-bottom: 17px;
+}
+
+
+.quick-actions-heading span {
+    color: #f59e0b;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+}
+
+
+.quick-actions-heading h2 {
+    margin: 5px 0 0;
+
+    color: #202532;
+
+    font-size: 21px;
+}
+
+
+.member-quick-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+.member-quick-actions button {
+    position: relative;
+
+    padding: 20px;
+
+    min-height: 165px;
+
+    text-align: left;
+
+    border-radius: 15px;
+
+    border: 1px solid #e8ebef;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.member-quick-actions button:hover {
+    transform: translateY(-4px);
+
+    border-color: #f8c36a;
+
+    box-shadow:
+        0 10px 25px rgba(20, 25, 35, 0.07);
+}
+
+
+.quick-action-icon {
+    width: 45px;
+    height: 45px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #fff7e6;
+
+    font-size: 21px;
+}
+
+
+.member-quick-actions button:nth-child(2)
+.quick-action-icon {
+    background: #ecfdf5;
+}
+
+
+.member-quick-actions button:nth-child(3)
+.quick-action-icon {
+    background: #eef2ff;
+}
+
+
+.member-quick-actions button:nth-child(4)
+.quick-action-icon {
+    background: #fef2f2;
+}
+
+
+.member-quick-actions strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #252a36;
+
+    font-size: 14px;
+}
+
+
+.member-quick-actions small {
+    color: #8a93a4;
+
+    font-size: 11px;
+}
+
+
+.quick-arrow {
+    position: absolute;
+
+    right: 18px;
+    bottom: 18px;
+
+    color: #c1c7d0;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   NO DATA
+========================================= */
+
+.dashboard-no-data {
+    padding: 25px 10px;
+
+    color: #8a93a4;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.member-dashboard-loading {
+    min-height: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+}
+
+
+.dashboard-loader {
+    width: 40px;
+    height: 40px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    border: 4px solid #edf0f3;
+
+    border-top-color: #f59e0b;
+
+    animation:
+        dashboard-spin 0.8s linear infinite;
+}
+
+
+@keyframes dashboard-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.member-dashboard-loading h3 {
+    margin: 0 0 5px;
+
+    color: #252a36;
+}
+
+
+.member-dashboard-loading p {
+    margin: 0;
+
+    color: #8a93a4;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.member-dashboard-error {
+    padding: 60px 30px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    border: 1px solid #fee2e2;
+}
+
+
+.error-icon {
+    width: 50px;
+    height: 50px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+
+.member-dashboard-error h3 {
+    margin: 0 0 8px;
+
+    color: #252a36;
+}
+
+
+.member-dashboard-error p {
+    margin: 0 0 20px;
+
+    color: #8a93a4;
+}
+
+
+.dashboard-retry-button {
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    background: #f59e0b;
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1150px) {
+
+    .member-dashboard-stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .member-quick-actions {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .welcome-decoration {
+        opacity: 0.8;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .member-dashboard-main-grid,
+    .dashboard-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member-welcome-card {
+        padding: 30px;
+    }
+
+    .welcome-decoration {
+        display: none;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .member-dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .member-quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .member-welcome-card {
+        min-height: auto;
+
+        padding: 28px 22px;
+    }
+
+    .welcome-content h1 {
+        font-size: 25px;
+    }
+
+    .dashboard-large-card,
+    .profile-progress-card,
+    .motivation-card {
+        padding: 20px;
+    }
+
+    .plan-info-row,
+    .trainer-details {
+        grid-template-columns: 1fr;
+    }
+
+    .membership-highlight {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .member-welcome-card {
+        border-radius: 16px;
+    }
+
+    .welcome-content h1 {
+        font-size: 22px;
+    }
+
+    .dashboard-stat-card {
+        min-height: 140px;
+    }
+
+    .member-quick-actions button {
+        min-height: 145px;
+    }
+}

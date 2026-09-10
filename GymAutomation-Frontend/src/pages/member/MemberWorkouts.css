@@ -1,0 +1,710 @@
+/* =================================
+   MEMBER WORKOUT PAGE
+================================= */
+
+.workout-page {
+    min-height: 100%;
+    padding: 30px;
+
+    background: #f4f6fa;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.workout-header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+    padding: 30px 34px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101827 0%,
+            #172b49 55%,
+            #244f7c 100%
+        );
+
+    color: white;
+
+    box-shadow:
+        0 12px 30px rgba(21, 42, 70, 0.22);
+}
+
+
+/* Decorative circle */
+
+.workout-header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: -80px;
+    top: -130px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 138, 46, 0.13);
+}
+
+
+.workout-header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+    height: 140px;
+
+    right: 130px;
+    bottom: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(74, 164, 255, 0.12);
+}
+
+
+/* =================================
+   HEADER CONTENT
+================================= */
+
+.workout-header-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.workout-header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70px;
+    height: 70px;
+
+    flex-shrink: 0;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff8a2b,
+            #ffb347
+        );
+
+    font-size: 34px;
+
+    box-shadow:
+        0 8px 20px rgba(255, 138, 43, 0.3);
+}
+
+
+.workout-label {
+    margin: 0 0 5px;
+
+    color: #ffac58;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.workout-header h1 {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: 800;
+}
+
+
+.workout-header p {
+    margin: 7px 0 0;
+
+    color: #d4deeb;
+
+    font-size: 14px;
+}
+
+
+/* =================================
+   COUNT
+================================= */
+
+.workout-count {
+    position: relative;
+    z-index: 3;
+
+    min-width: 125px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 17px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.workout-count span {
+    color: #ff9d42;
+
+    font-size: 30px;
+    font-weight: 800;
+}
+
+
+.workout-count small {
+    color: #d8e1ed;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+
+/* =================================
+   WORKOUT GRID
+================================= */
+
+.workout-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(310px, 1fr)
+        );
+
+    gap: 24px;
+}
+
+
+/* =================================
+   WORKOUT CARD
+================================= */
+
+.workout-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 25px;
+
+    border: 1px solid #e1e7ef;
+
+    border-radius: 22px;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px rgba(29, 49, 76, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.workout-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff8126,
+            #ffb347
+        );
+}
+
+
+.workout-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 17px 38px rgba(29, 49, 76, 0.13);
+}
+
+
+/* =================================
+   CARD TOP
+================================= */
+
+.workout-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+
+.workout-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+
+    background: #fff1e6;
+
+    color: #e96d16;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+.workout-status {
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    background: #e7f5ed;
+
+    color: #328353;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =================================
+   CARD ICON
+================================= */
+
+.workout-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 60px;
+    height: 60px;
+
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e7f1ff,
+            #c7ddfa
+        );
+
+    font-size: 30px;
+}
+
+
+.workout-card h2 {
+    margin: 0;
+
+    color: #172337;
+
+    font-size: 21px;
+    font-weight: 800;
+}
+
+
+/* =================================
+   DIVIDER
+================================= */
+
+.workout-divider {
+    height: 1px;
+
+    margin: 18px 0;
+
+    background: #e8edf3;
+}
+
+
+/* =================================
+   DETAILS
+================================= */
+
+.workout-details h4 {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin: 0 0 10px;
+
+    color: #315f91;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+
+.workout-details p {
+    margin: 0;
+
+    color: #657181;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+    white-space: pre-line;
+}
+
+
+/* =================================
+   TRAINER
+================================= */
+
+.workout-trainer {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 22px;
+    padding-top: 18px;
+
+    border-top: 1px solid #edf0f4;
+}
+
+
+.workout-trainer-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #673ab7,
+            #9367d8
+        );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+.workout-trainer div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.workout-trainer span {
+    color: #919aa6;
+
+    font-size: 11px;
+}
+
+
+.workout-trainer strong {
+    color: #283548;
+
+    font-size: 13px;
+}
+
+
+/* =================================
+   EMPTY
+================================= */
+
+.workout-empty {
+    max-width: 600px;
+
+    margin: 70px auto;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    border: 1px solid #e1e7ef;
+
+    border-radius: 24px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 30px rgba(29, 49, 76, 0.08);
+}
+
+
+.workout-empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 85px;
+    height: 85px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #edf4ff;
+
+    font-size: 42px;
+}
+
+
+.workout-empty h2 {
+    margin: 0 0 8px;
+
+    color: #1d2b3d;
+
+    font-size: 23px;
+}
+
+
+.workout-empty p {
+    margin: 0;
+
+    color: #77818d;
+
+    font-size: 14px;
+}
+
+
+/* =================================
+   ERROR
+================================= */
+
+.workout-error {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+    padding: 18px 20px;
+
+    border: 1px solid #ffd5ce;
+
+    border-radius: 15px;
+
+    background: #fff2f0;
+
+    color: #8b3024;
+}
+
+
+.workout-error > span {
+    font-size: 23px;
+}
+
+
+.workout-error strong {
+    font-size: 14px;
+}
+
+
+.workout-error p {
+    margin: 4px 0 0;
+
+    font-size: 13px;
+}
+
+
+/* =================================
+   LOADING
+================================= */
+
+.workout-loading {
+    min-height: 450px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #536477;
+}
+
+
+.workout-spinner {
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 15px;
+
+    border: 4px solid #dce5ef;
+
+    border-top-color: #ff8428;
+
+    border-radius: 50%;
+
+    animation:
+        workoutSpin 0.8s linear infinite;
+}
+
+
+@keyframes workoutSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 768px) {
+
+    .workout-page {
+        padding: 20px;
+    }
+
+
+    .workout-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        padding: 24px;
+    }
+
+
+    .workout-header h1 {
+        font-size: 27px;
+    }
+
+
+    .workout-count {
+        width: 100%;
+
+        flex-direction: row;
+
+        justify-content: center;
+
+        gap: 10px;
+    }
+
+
+    .workout-count span {
+        font-size: 24px;
+    }
+
+
+    .workout-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 480px) {
+
+    .workout-page {
+        padding: 14px;
+    }
+
+
+    .workout-header {
+        padding: 20px;
+    }
+
+
+    .workout-header-content {
+        align-items: flex-start;
+
+        gap: 14px;
+    }
+
+
+    .workout-header-icon {
+        width: 55px;
+        height: 55px;
+
+        font-size: 27px;
+    }
+
+
+    .workout-header h1 {
+        font-size: 23px;
+    }
+
+
+    .workout-header p {
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+
+    .workout-card {
+        padding: 20px;
+    }
+
+}

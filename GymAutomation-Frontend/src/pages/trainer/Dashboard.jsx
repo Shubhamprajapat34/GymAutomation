@@ -35,10 +35,7 @@ const Dashboard = () => {
             setLoading(true);
             setError("");
 
-            /*
-             * Change these API URLs according
-             * to your Spring Boot backend APIs.
-             */
+            // we can put api according to our backend endpoints;
 
             const [
                 membersResponse,
@@ -86,9 +83,9 @@ const Dashboard = () => {
             });
 
 
-            /*
-             * Show only first 5 members
-             */
+        
+              //Show only first 5 members
+             
 
             setRecentMembers(
 

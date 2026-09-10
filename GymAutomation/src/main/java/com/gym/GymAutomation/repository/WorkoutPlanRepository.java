@@ -8,4 +8,6 @@ import java.util.Optional;
 public interface WorkoutPlanRepository extends JpaRepository<WorkoutPlan, Long> {
     List<WorkoutPlan> findAllByTrainerId(Long trainerId);
     Optional<WorkoutPlan> findByIdAndTrainerId(Long id, Long trainerId);
+    
+    List<WorkoutPlan> findAllByMemberId(Long memberId);
 }

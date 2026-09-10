@@ -25,6 +25,14 @@ import AssignedMembers from "../pages/trainer/AssignedMembers";
 import CreateWorkoutPlan from "../pages/trainer/CreateWorkoutPlan";
 import CreateDietPlan from "../pages/trainer/CreateDietPlan";
 
+import MemberLayout from "../layouts/MemberLayout";
+import MemberDashboard from "../pages/member/MemberDashboard";
+import MemberProfile from "../pages/member/MemberProfile";
+import MemberDiet from "../pages/member/MemberDiet";
+import MemberWorkouts from "../pages/member/MemberWorkouts";
+import MemberMembership from "../pages/member/MemberMembership";
+import GymInformation from "../pages/member/GymInformation";
+import MemberTrainer from "../pages/member/MemberTrainer";
 
 const AppRoutes = () => {
 
@@ -86,6 +94,26 @@ const AppRoutes = () => {
            <Route path="diet-plan" element={<CreateDietPlan />} />
 
         </Route>
+
+        {/* ================= MEMBER ROUTES ================= */}
+       
+        <Route path="/member" element={<MemberLayout />} >
+
+        <Route path="dashboard" element={<MemberDashboard />}/>
+
+        <Route path="profile" element={<MemberProfile />}/>
+
+        <Route path="trainer" element={<MemberTrainer />}/>
+
+        <Route path="diet-plans" element={<MemberDiet/>} />
+
+        <Route path="workout-plans" element={<MemberWorkouts />}/>
+
+        <Route path="membership" element={<MemberMembership />} />
+
+        <Route path="gym" element={<GymInformation />}/>
+
+         </Route>
 
 
         </Routes>
