@@ -880,7 +880,8 @@
 }
 
 
-.form-group input {
+.form-group input,
+.form-group select {
 
     width: 100%;
 
@@ -907,7 +908,8 @@
 }
 
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus {
 
     border-color:
 

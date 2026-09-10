@@ -23,10 +23,8 @@ public class AdminMemberController {
     }
 
 
-    // ==========================
+    
     // VIEW ALL MEMBERS
-    // ==========================
-
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<Member>> getAllMembers() {
@@ -37,10 +35,8 @@ public class AdminMemberController {
     }
 
 
-    // ==========================
+    
     // VIEW MEMBER BY ID
-    // ==========================
-
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Member> getMemberById(
@@ -52,10 +48,8 @@ public class AdminMemberController {
     }
 
 
-    // ==========================
-    // UPDATE MEMBER
-    // ==========================
 
+    // UPDATE MEMBER
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Member> updateMember(
@@ -68,10 +62,8 @@ public class AdminMemberController {
     }
 
 
-    // ==========================
+    
     // DELETE MEMBER
-    // ==========================
-
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<String> deleteMember(
@@ -95,5 +87,15 @@ public class AdminMemberController {
 
          return ResponseEntity.ok(member);
      }
+
+    @PutMapping("/{memberId}/trainer/{trainerId}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Member> assignTrainer(
+            @PathVariable Long memberId,
+            @PathVariable Long trainerId) {
+        return ResponseEntity.ok(
+                memberService.assignTrainer(memberId, trainerId)
+        );
+    }
 
 }

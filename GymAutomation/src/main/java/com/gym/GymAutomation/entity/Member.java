@@ -34,6 +34,10 @@ public class Member {
         this.subscriptionStatus = "INACTIVE";
     }
 
+    @ManyToOne
+    @JoinColumn(name = "trainer_id")
+    private Trainer trainer;
+
     public Long getId() {
         return id;
     }
@@ -89,5 +93,13 @@ public class Member {
 
     public void setMembership(Membership membership) {
     this.membership = membership;
+    }
+
+    public Trainer getTrainer() {
+    return trainer;
+    }
+
+    public void setTrainer(Trainer trainer) {
+    this.trainer = trainer;
     }
 }

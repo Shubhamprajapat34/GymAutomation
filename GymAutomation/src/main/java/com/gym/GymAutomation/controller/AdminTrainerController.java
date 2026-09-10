@@ -1,8 +1,12 @@
 package com.gym.GymAutomation.controller;
 
 import com.gym.GymAutomation.entity.Trainer;
+import com.gym.GymAutomation.dto.AuthResponse;
+import com.gym.GymAutomation.dto.RegisterRequest;
+import com.gym.GymAutomation.service.AuthService;
 import com.gym.GymAutomation.service.TrainerService;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -15,16 +19,25 @@ import java.util.List;
 public class AdminTrainerController {
 
     private final TrainerService trainerService;
+    private final AuthService authService;
 
-    public AdminTrainerController(TrainerService trainerService) {
+    public AdminTrainerController(TrainerService trainerService, AuthService authService) {
         this.trainerService = trainerService;
+        this.authService = authService;
+    }
+
+    @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<AuthResponse> createTrainer(
+            @Valid @RequestBody RegisterRequest request) {
+        request.setRole(com.gym.GymAutomation.entity.Role.TRAINER);
+        return ResponseEntity.status(201).body(authService.register(request));
     }
 
 
     // =========================
     // VIEW ALL TRAINERS
     // =========================
-
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<Trainer>> getAllTrainers() {
@@ -38,7 +51,6 @@ public class AdminTrainerController {
     // =========================
     // VIEW TRAINER BY ID
     // =========================
-
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Trainer> getTrainerById(

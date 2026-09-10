@@ -2110,3 +2110,513 @@ a {
     }
 
 }
+              /* trainer layout css */
+
+/* ========================================
+   TRAINER LAYOUT
+======================================== */
+
+.trainer-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f6f8;
+}
+
+
+/* ========================================
+   TRAINER SIDEBAR
+======================================== */
+
+.trainer-sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: #252525;
+    color: white;
+    padding: 20px 14px;
+    flex-shrink: 0;
+}
+
+
+/* ========================================
+   TRAINER BRAND
+======================================== */
+
+.trainer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.trainer-brand-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #a78b4b;
+    color: #222;
+}
+
+
+/* ========================================
+   TRAINER PANEL TITLE
+======================================== */
+
+.trainer-panel-title {
+    color: #9ca3af;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding-left: 12px;
+    margin-bottom: 15px;
+}
+
+
+/* ========================================
+   TRAINER MENU
+======================================== */
+
+.trainer-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+.trainer-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+
+.trainer-menu-item:hover {
+    background: #333333;
+    color: white;
+}
+
+
+.trainer-menu-item.active {
+    background: #a78b4b;
+    color: white;
+}
+
+
+/* ========================================
+   TRAINER MAIN
+======================================== */
+
+.trainer-main {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* ========================================
+   TRAINER NAVBAR
+======================================== */
+
+.trainer-navbar {
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.trainer-navbar-left {
+    font-size: 18px;
+    font-weight: 700;
+    color: #252b33;
+}
+
+
+.trainer-navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+
+/* ========================================
+   NOTIFICATION
+======================================== */
+
+.trainer-notification-button {
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   TRAINER USER
+======================================== */
+
+.trainer-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.trainer-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #6754a8;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+
+.trainer-user-text strong {
+    display: block;
+    font-size: 13px;
+    color: #252b33;
+}
+
+
+.trainer-user-text span {
+    display: block;
+    font-size: 10px;
+    color: #9ca3af;
+    margin-top: 3px;
+}
+
+
+/* ========================================
+   LOGOUT BUTTON
+======================================== */
+
+.trainer-logout-button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border: none;
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 9px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   TRAINER CONTENT
+======================================== */
+
+.trainer-content {
+    padding: 28px;
+}
+
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .trainer-sidebar {
+        width: 75px;
+        padding: 20px 10px;
+    }
+
+
+    .trainer-brand span {
+        display: none;
+    }
+
+
+    .trainer-brand {
+        justify-content: center;
+        padding: 0;
+    }
+
+
+    .trainer-panel-title {
+        display: none;
+    }
+
+
+    .trainer-menu-item span {
+        display: none;
+    }
+
+
+    .trainer-menu-item {
+        justify-content: center;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .trainer-sidebar {
+        display: none;
+    }
+
+
+    .trainer-navbar {
+        padding: 0 15px;
+    }
+
+
+    .trainer-navbar-left {
+        font-size: 15px;
+    }
+
+
+    .trainer-user-text {
+        display: none;
+    }
+
+
+    .trainer-logout-button span {
+        display: none;
+    }
+
+
+    .trainer-logout-button {
+        padding: 9px;
+    }
+
+
+    .trainer-content {
+        padding: 16px;
+    }
+
+}
+ /*======================Members Layout css=======================*/
+
+ /* =========================================
+   MEMBER LAYOUT
+========================================= */
+
+.member-layout {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    background: #f5f7fb;
+
+}
+
+
+/* SIDEBAR */
+
+.member-sidebar {
+
+    width: 250px;
+
+    min-height: 100vh;
+
+    background: #151922;
+
+    color: white;
+
+    padding: 25px 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.member-logo {
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    padding: 10px;
+
+}
+
+
+.member-sidebar-title {
+
+    font-size: 12px;
+
+    color: #94a3b8;
+
+    margin-top: 30px;
+
+    margin-bottom: 15px;
+
+    padding-left: 10px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* NAVIGATION */
+
+.member-navigation {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.member-navigation a {
+
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    padding: 13px 15px;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+
+}
+
+
+.member-navigation a:hover {
+
+    background: #252b38;
+
+    color: white;
+
+}
+
+
+.member-navigation a.active {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+
+/* LOGOUT */
+
+.member-logout-button {
+
+    margin-top: auto;
+
+    border: none;
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: #ef4444;
+
+    color: white;
+
+    font-size: 15px;
+
+}
+
+
+/* MAIN CONTENT */
+
+.member-main-content {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.member-topbar {
+
+    height: 70px;
+
+    background: white;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    font-weight: 600;
+
+}
+
+
+.member-user-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.member-avatar {
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: #e2e8f0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #1e293b;
+
+    font-weight: bold;
+
+}
+
+
+.member-page-content {
+
+    padding: 30px;
+
+}

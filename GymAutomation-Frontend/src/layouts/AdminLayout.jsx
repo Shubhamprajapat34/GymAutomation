@@ -37,18 +37,12 @@ const AdminLayout = () => {
 
             {/* TOP NAVBAR */}
 
-            <Navbar
-
-                toggleSidebar={toggleSidebar}
-
-            />
+            <Navbar toggleSidebar={toggleSidebar} />
 
 
             {/* LEFT SIDEBAR */}
 
-            <Sidebar
-
-                sidebarOpen={sidebarOpen}
+            <Sidebar sidebarOpen={sidebarOpen}
 
                 closeSidebar={closeSidebar}
 
